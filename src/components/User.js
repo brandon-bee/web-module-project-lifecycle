@@ -1,14 +1,15 @@
+/* eslint-disable react/prop-types */
 import React from "react";
 
 class User extends React.Component {
   render() {
     return(
       <div className="userCard">
-        <img src="https://avatars.githubusercontent.com/u/64279000?v=4" />
-        <a href="https://github.com/brandon-bee" target="_blank"><h3>Brandon Booth</h3></a>
-        <p>(brandon-bee)</p>
-        <p>Total Repos: 51</p>
-        <p>Total Followers: 10</p>
+        <img src={this.props.user.avatar_url} />
+        <a href={this.props.user.html_url} target="_blank"><h3>{this.props.user.name}</h3></a>
+        <p>({this.props.user.login})</p>
+        <p>Total Repos: {this.props.user.public_repos}</p>
+        <p>Total Followers: {this.props.user.followers}</p>
       </div>
     )
   }
